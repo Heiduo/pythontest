@@ -24,7 +24,7 @@ sorting = "favorites"
 # 图片质量
 purity = 100
 # 下载页数
-numbers = 5
+numbers = 2
 # 大图前缀
 pre = "wallhaven"
 # 下载文件保存目录
@@ -59,13 +59,13 @@ def download_img(img_url,file_path,reload = False):
 if __name__ == "__main__":
     time_today = datetime.now()
     ymd = time_today.strftime("%Y-%m-%d")
-    my_dir = f"{img_path}\{ymd}"
+    my_dir = f"{img_path}/{ymd}"
     if not os.path.exists(my_dir):
         os.makedirs(my_dir)
     
     # 加载已经下载过的图片链接
     download_list = []
-    download_dict = JsonConf.load(f"{img_path}\{img_list}")
+    download_dict = JsonConf.load(f"{img_path}/{img_list}")
     
     if key in download_dict:
         download_list = download_dict[key]

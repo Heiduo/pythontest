@@ -10,7 +10,7 @@ import os
 import json
 
 # 存储文件路径
-file_path = '.\wallheaven_downlod'
+file_path = '.\wallheaven_download'
 
 class JsonConf:
     @staticmethod
@@ -22,7 +22,7 @@ class JsonConf:
     def load(path):
         if not os.path.exists(file_path):
             os.mkdir(file_path)
-        os.chdir(file_path)
+        # os.chdir(file_path)
         if not os.path.exists(path):
             with open(path,'w') as json_file:
                 data = {}
