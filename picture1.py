@@ -24,7 +24,7 @@ sorting = "favorites"
 # 图片质量
 purity = 100
 # 下载页数
-numbers = 2
+numbers = 20
 # 大图前缀
 pre = "wallhaven"
 # 下载文件保存目录
@@ -82,7 +82,7 @@ if __name__ == "__main__":
         j = max(new_files) + 1
     file_list = [j]
     
-    while i < numbers:
+    while (i - 1)< numbers:
         # 当前页面开始爬取
         page_start = timeit.default_timer()
 
