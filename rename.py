@@ -6,7 +6,7 @@ common_length_all = 3
 
 def renameNum(file_path,common_length):
     if os.path.isdir(file_path) :
-        print("dir")
+        # print("dir")
         common_pre_name = ''
         for file in os.listdir(file_path):
             if len(common_pre_name)==0:
@@ -19,9 +19,9 @@ def renameNum(file_path,common_length):
                         common_pre_name = common_pre_name[0:i]
                         break
             print('common_name: ' + common_pre_name)
+        pre_len = len(common_pre_name)
         for file in os.listdir(file_path):
             print(file)
-            pre_len = len(common_pre_name)
             num = re.findall("\d+",file[pre_len:])
             # print(num)
             if len(num) > 0 and len(num[0])<common_length:
@@ -31,7 +31,7 @@ def renameNum(file_path,common_length):
                 for i in range(did):
                     tianchong = tianchong+"0"
                 # print(tianchong+num[0])
-                new_name = file.replace(num[0],tianchong+num[0])
+                new_name = file.replace(common_pre_name+num[0],common_pre_name+tianchong+num[0])
                 print(new_name)
                 old_file = os.path.join(file_path,file)
                 new_file = os.path.join(file_path,new_name)

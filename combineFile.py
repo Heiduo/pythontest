@@ -2,7 +2,7 @@ import os
 import rename
 file_path_all = 'D:\Dowload\BaiduNetdiskDownload\sh'
 file_name_all='*.ts'
-new_name_all='big.ts'
+new_name_all='小2.ts'
 
 def osCombine(file_path,file_name = '*.ts',new_name='new.ts'):
     file_name_path = file_path+'\\'+file_name
